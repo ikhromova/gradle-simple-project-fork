@@ -1,7 +1,10 @@
 package holly;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.codec.EncoderException;
+import org.apache.commons.codec.binary.Hex;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import static holly.EnhancedForDouble.*;
@@ -76,12 +79,15 @@ public class EnhancedFor {
     // pre: list != null
     // post: return sum of elements
     // use traditional for loop
-    public static int sumListOld(int[] list) {
+    public static int sumListOld(int[] list) throws EncoderException {
         int total = 0;
         for (int i = 0; i < list.length; i++) {
             total += list[i];
             System.out.println(list[i]);
         }
+        Hex resHex = new Hex();
+        resHex.encode(new ByteArrayOutputStream(total));
+        resHex.getCharsetName();
         return total;
     }
 

@@ -1,5 +1,5 @@
 version: "1.0"
-linter: registry.jetbrains.team/p/sa/containers/qodana-jvm:2024.1-nightly
+linter: jetbrains/qodana-jvm:2023.3
 profile:
   path: My_custom_profile.yaml
 exclude:
@@ -9,4 +9,5 @@ exclude:
 include:
   - name: CheckDependencyLicenses
   - name: DuplicatedCode
+  - name: VulnerableCodeUsages
   - name: NpmVulnerableApiCode

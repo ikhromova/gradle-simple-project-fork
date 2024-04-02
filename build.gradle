@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'commons-codec:commons-codec:1.11'
     implementation 'com.google.guava:guava:29.0-jre'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.5'
 }
