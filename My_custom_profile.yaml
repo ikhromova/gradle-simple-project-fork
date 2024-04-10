@@ -29,6 +29,7 @@ groups: # List of configured groups
       - CheckThirdPartySoftwareList
       - DuplicatedCode
       - NpmVulnerableApiCode
+      - VulnerableCodeUsages
 
 inspections: # Group invocation
   - group: InspectionsToInclude
