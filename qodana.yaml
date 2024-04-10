@@ -1,0 +1,25 @@
+version: "1.0"
+linter: registry.jetbrains.team/p/sa/containers/qodana-jvm:2024.1-nightly
+profile:
+  path: My_custom_profile.yaml
+include:
+  - name: CheckDependencyLicenses
+  - name: CheckModuleLicenses
+  - name: CheckThirdPartySoftwareList
+  - name: DuplicatedCode
+  - name: NpmVulnerableApiCode
+licenseRules:
+  - keys:
+      - "PROPRIETARY-LICENSE"
+      - "MIT"
+    prohibited:
+      - "BSD-3-CLAUSE-NO-CHANGE"
+      - "GPL-2.0-or-later"
+      - "None"
+      - "Apache-2.0"
+    allowed:
+      - "ISC"
+
+  - keys: [ "Apache-2.0" ]
+    prohibited:
+      - "MIT"

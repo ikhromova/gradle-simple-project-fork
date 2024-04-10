@@ -1,7 +1,7 @@
 name: "My_custom_profile" # Profile name
 
 baseProfile: empty # Use the 'empty' profile as initial configuration of this profile
- # The included file becomes part of this profile
+# The included file becomes part of this profile
 
 groups: # List of configured groups
   - groupId: InspectionsToInclude
@@ -10,6 +10,7 @@ groups: # List of configured groups
       - "JSCategories" # Include the JSCategories group from below
       - "PHPInspections" # Include the PHPInspections group from below
       - "VulnerableInspections" # Include the PHPInspections group from below
+      - "InspectionsMajor" # Include the PHPInspections group from below
   - groupId: JSCategories
     groups:
       - "category:JavaScript and TypeScript/ES2015 migration aids"
@@ -21,6 +22,13 @@ groups: # List of configured groups
     inspections: #  Inspection IDs
       - VulnerableLibrariesGlobal
       - VulnerableLibrariesLocal
+  - groupId: InspectionsMajor
+    inspections: #  Inspection IDs
+      - CheckDependencyLicenses
+      - CheckModuleLicenses
+      - CheckThirdPartySoftwareList
+      - DuplicatedCode
+      - NpmVulnerableApiCode
 
 inspections: # Group invocation
   - group: InspectionsToInclude
