@@ -5,8 +5,8 @@ plugins {
 
 group = 'com.github.gradle.simple'
 
-sourceCompatibility = 11 // java 8
-targetCompatibility = 11
+sourceCompatibility = 17 // java 8
+targetCompatibility = 17
 
 repositories {
     mavenCentral()
@@ -34,7 +34,7 @@ artifacts {
 }
 
 wrapper {
-    gradleVersion = "8.0"
+    gradleVersion = "8.8"
     distributionType = Wrapper.DistributionType.ALL
 }
 
