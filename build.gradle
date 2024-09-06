@@ -54,6 +54,8 @@ jacocoTestReport {
         xml.required.set(true)
         csv.required.set(true)
         html.required.set(true)
+
+        xml.outputLocation = file(".qodana/code-coverage/coverage.xml")
     }
 }
 
