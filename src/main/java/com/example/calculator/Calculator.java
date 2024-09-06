@@ -26,4 +26,8 @@ public class Calculator {
         return a.indexOf('d') + b;
     }
 
+    public int devideeese(String a, int b) {
+        return a.indexOf('d') + b;
+    }
+
 }
