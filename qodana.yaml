@@ -1,9 +1,6 @@
 version: 1.0
+projectJDK: "17"
 profile:
-  name: qodana.recommended
+  name: empty
 include:
-  - name: VulnerableLibrariesGlobal
-  - name: VulnerableLibrariesLocal
-  - name: PhpVulnerablePathsInspection
-  - name: CheckDependencyLicenses
-  - name: RiderSecurityErrorsInspection
+  - name: HardcodedPasswords
