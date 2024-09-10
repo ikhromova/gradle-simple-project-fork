@@ -4,6 +4,7 @@ profile:
   name: qodana.recommended
 include:
   - name: JvmCoverageInspection
+  - name: HardcodedPasswords
 bootstrap: |
   ./gradlew test
   ./gradlew jacocoTestReport
