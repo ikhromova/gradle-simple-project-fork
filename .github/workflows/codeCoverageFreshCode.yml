@@ -25,7 +25,7 @@ jobs:
           ./gradlew jacocoTestReport
 
       - name: Archive coverage data
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: jacocoCodeCoverage
           path: .qodana/code-coverage
