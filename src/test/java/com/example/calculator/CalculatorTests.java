@@ -68,16 +68,16 @@ class CalculatorTests {
                 () -> first + " / " + second + " should equal " + expectedResult);
     }
 
-//    @ParameterizedTest(name = "{0} / {1} = {2}")
-//    @CsvSource({
-//            "d,    1,   1",
-//            "ads,    2,   3",
-//            "qwd,  2, 4",
-//            "safd,  100, 103"
-//    })
-//    void devideeese(String first, int second, int expectedResult) {
-//        Calculator calculator = new Calculator();
-//        assertEquals(expectedResult, calculator.devideese(first, second),
-//                () -> first + " / " + second + " should equal " + expectedResult);
-//    }
+    @ParameterizedTest(name = "{0} / {1} = {2}")
+    @CsvSource({
+            "d,    1,   1",
+            "ads,    2,   3",
+            "qwd,  2, 4",
+            "safd,  100, 103"
+    })
+    void devidewereese(String first, int second, int expectedResult) {
+        Calculator calculator = new Calculator();
+        assertEquals(expectedResult, calculator.devidewereese(first, second),
+                () -> first + " / " + second + " should equal " + expectedResult);
+    }
 }

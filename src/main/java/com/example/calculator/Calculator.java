@@ -30,4 +30,12 @@ public class Calculator {
         return a.indexOf('d') + b;
     }
 
+    public int sdfsdfsdf(String a, int b) {
+        return a.indexOf('d') + b;
+    }
+
+    public int devidewereese(String a, int b) {
+        return a.indexOf('d') + b;
+    }
+
 }
