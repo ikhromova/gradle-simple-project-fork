@@ -38,4 +38,8 @@ public class Calculator {
         return a.indexOf('d') + b;
     }
 
+    public int newFunDev(String a, int b) {
+        return a.indexOf('d') + b;
+    }
+
 }

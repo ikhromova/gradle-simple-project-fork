@@ -17,5 +17,5 @@ failureConditions:
     low: 0
     info: 0
   testCoverageThresholds:
-    total: 45
-    fresh: 1
+    total: 25
+    fresh: 75
