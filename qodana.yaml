@@ -1,9 +1,21 @@
 version: 1.0
+projectJDK: "17"
 profile:
   name: qodana.recommended
 include:
-  - name: VulnerableLibrariesGlobal
-  - name: VulnerableLibrariesLocal
-  - name: PhpVulnerablePathsInspection
-  - name: CheckDependencyLicenses
-  - name: RiderSecurityErrorsInspection
+  - name: JvmCoverageInspection
+bootstrap: |
+  ./gradlew test
+  ./gradlew jacocoTestReport
+failThreshold: 0 # should be overridden
+failureConditions:
+  severityThresholds:
+    any: 1
+    critical: 0
+    high: 0
+    moderate: 0
+    low: 0
+    info: 0
+  testCoverageThresholds:
+    total: 25
+    fresh: 75
