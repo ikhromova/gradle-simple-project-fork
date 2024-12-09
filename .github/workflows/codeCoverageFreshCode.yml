@@ -38,11 +38,11 @@ jobs:
           password: ${{ secrets.SPACE_TOKEN }}
           
       - name: Qodana Scan
-        uses: JetBrains/qodana-action@v2024.1.9
+        uses: JetBrains/qodana-action@v2024.2.6
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_FRESH_COVERAGE }}
         with:
           pr-mode: true # Enable the pull-request mode
           args: |
-            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.2-nightly
+            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.3-rc
 
