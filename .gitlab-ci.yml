@@ -1,0 +1,14 @@
+qodana:
+  image:
+    name: jetbrains/qodana-jvm:2024.3-eap
+    entrypoint: [""]
+  variables:
+    QODANA_TOKEN: $qodana_token
+    script:
+        qodana --diff-start=$CI_MERGE_REQUEST_TARGET_BRANCH_SHA \
+          --diff-end=$CI_MERGE_REQUEST_SOURCE_BRANCH_SHA \
+          --results-dir=$CI_PROJECT_DIR/.qodana/results
+  artifacts:
+    paths:
+      - .qodana/results
+    expose_as: 'Qodana report'
