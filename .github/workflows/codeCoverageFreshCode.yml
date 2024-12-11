@@ -43,6 +43,6 @@ jobs:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_FRESH_COVERAGE }}
         with:
           pr-mode: true # Enable the pull-request mode
-          args: |
-            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.3-rc, --diff-start,0be534b19e095975ab1549922e019442fe3e64d9, --diff-end, c13135f6abe14ce3dc8400d2e3734a715cf969ff
+          args:
+            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.3-rc,--diff-start,3086c0043137a2fbf7bf65a60c9049d1cdbe2e32,--diff-end,8a2daf7ea0e1b77cefdd462b8fc9505531dc311c
 
