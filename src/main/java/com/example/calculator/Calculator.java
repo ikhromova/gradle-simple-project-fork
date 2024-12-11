@@ -42,4 +42,8 @@ public class Calculator {
         return a.indexOf('d') + b;
     }
 
+    public int newFunFunDev(String a, int b) {
+        return a.indexOf('d') + b;
+    }
+
 }
