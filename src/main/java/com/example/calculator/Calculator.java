@@ -46,4 +46,12 @@ public class Calculator {
         return a.indexOf('d') + b;
     }
 
+    public int newFunction(String a, int b) {
+        return a.indexOf('d') + b;
+    }
+
+    public int newFunction2(String a, int b) {
+        return a.indexOf('d') + b;
+    }
+
 }
