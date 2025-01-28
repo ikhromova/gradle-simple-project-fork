@@ -10,5 +10,5 @@ bootstrap: |
 failThreshold: 0 # should be overridden
 failureConditions:
   testCoverageThresholds:
-    total: 31
-    fresh: 50
+    total: 32
+    fresh: 33
