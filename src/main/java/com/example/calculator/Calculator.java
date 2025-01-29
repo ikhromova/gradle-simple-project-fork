@@ -7,10 +7,6 @@ public class Calculator {
         return a + b;
     }
 
-    public int multiply(int a, int b) {
-        return a * b;
-    }
-
     public int minus(int a, int b) {
         return a - b;
     }
@@ -23,14 +19,6 @@ public class Calculator {
     }
 
     public int devideee(String a, int b) {
-        return a.indexOf('d') + b;
-    }
-
-    public int devideeese(String a, int b) {
-        return a.indexOf('d') + b;
-    }
-
-    public int sdfsdfsdf(String a, int b) {
         return a.indexOf('d') + b;
     }
 
@@ -50,12 +38,9 @@ public class Calculator {
         return a.indexOf('d') + b;
     }
 
-    public int newFunction2(String a, int b) {
+    public int newFunctionsdadf(String a, int b) {
         return a.indexOf('d') + b;
     }
 
-    public int newFunction3(String a, int b) {
-        return a.indexOf('d') + b;
-    }
 
 }
