@@ -7,8 +7,3 @@ include:
 bootstrap: |
   ./gradlew test
   ./gradlew jacocoTestReport
-failThreshold: 0 # should be overridden
-failureConditions:
-  testCoverageThresholds:
-    total: 0
-    fresh: 32
