@@ -44,5 +44,6 @@ jobs:
         with:
           pr-mode: true # Enable the pull-request mode
           args:
-            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.3-nightly,--diff-start,8b0d052f94293293c057f9827f279f28068aec0f
+            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.3-nightly,--diff-start,0be534b19e095975ab1549922e019442fe3e64d9,--diff-end,6926e1411e2cffb6bedf2cd3843e88b3ee9f4fa8
+
 
