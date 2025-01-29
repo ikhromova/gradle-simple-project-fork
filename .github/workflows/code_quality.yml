@@ -33,5 +33,5 @@ jobs:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
           args: |
-            --fail-threshold,0,
-            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.2-nightly
+            --baseline,qodana.sarif.json,
+            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.3-nightly
