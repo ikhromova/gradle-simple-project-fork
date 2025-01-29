@@ -119,4 +119,10 @@ class CalculatorTests {
         assertEquals(expectedResult, calculator.newFunction(first, second),
                 () -> first + " / " + second + " should equal " + expectedResult);
     }
+
+    void newFunctiondf(String first, int second, int expectedResult) {
+        Calculator calculator = new Calculator();
+        assertEquals(expectedResult, calculator.newFunction(first, second),
+                () -> first + " / " + second + " should equal " + expectedResult);
+    }
 }
