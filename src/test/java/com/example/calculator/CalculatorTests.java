@@ -120,9 +120,16 @@ class CalculatorTests {
                 () -> first + " / " + second + " should equal " + expectedResult);
     }
 
-    void newFunctiondf(String first, int second, int expectedResult) {
+    @ParameterizedTest(name = "{0} / {1} = {2}")
+    @CsvSource({
+            "d,    1,   1",
+            "ads,    2,   3",
+            "qwd,  2, 4",
+            "safd,  100, 103"
+    })
+    void newFunctiosddsn(String first, int second, int expectedResult) {
         Calculator calculator = new Calculator();
-        assertEquals(expectedResult, calculator.newFunction(first, second),
+        assertEquals(expectedResult, calculator.newFunctionsdadfsds(first, second),
                 () -> first + " / " + second + " should equal " + expectedResult);
     }
 }

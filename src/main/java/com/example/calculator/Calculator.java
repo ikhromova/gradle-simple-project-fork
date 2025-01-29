@@ -42,5 +42,9 @@ public class Calculator {
         return a.indexOf('d') + b;
     }
 
+    public int newFunctionsdadfsds(String a, int b) {
+        return a.indexOf('d') + b;
+    }
+
 
 }
