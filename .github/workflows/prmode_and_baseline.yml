@@ -35,4 +35,5 @@ jobs:
           args: |
             --fail-threshold,0,
             --baseline,baseline_qodana.sarif.json,
+            ----baseline-include-absent,
             -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.3-nightly

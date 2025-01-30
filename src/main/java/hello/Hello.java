@@ -11,15 +11,5 @@ public class Hello {
         } else if (true) {
 
         }
-
-        if (true) {
-
-        } else if (true) {
-
-        }
-
-        if (false) {
-            System.out.println("x");
-        }
     }
 }
