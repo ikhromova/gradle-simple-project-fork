@@ -7,3 +7,4 @@ include:
 bootstrap: |
   ./gradlew test
   ./gradlew jacocoTestReport
+fixesStrategy: apply
