@@ -32,5 +32,6 @@ jobs:
         with:
           pr-mode: true
           push-fixes: 'pull-request'
+          commit-message: '🤖 Apply quick-fixes by Super Qodana '
           args: |
             -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.3-nightly

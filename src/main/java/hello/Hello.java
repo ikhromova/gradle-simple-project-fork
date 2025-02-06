@@ -15,6 +15,9 @@ public class Hello {
         } else if (true) {
 
         }
+
+        int x = 4;
+        int y = x == 10 ? 4 : 4;
     }
 
     public static void erwer() {
