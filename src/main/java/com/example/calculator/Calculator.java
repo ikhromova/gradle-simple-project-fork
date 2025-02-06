@@ -1,8 +1,5 @@
 package com.example.calculator;
 
-import java.util.stream.Stream;
-import java.util.stream.Stream;
-
 
 public class Calculator {
 
