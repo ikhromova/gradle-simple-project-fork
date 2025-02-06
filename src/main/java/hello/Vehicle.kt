@@ -26,6 +26,9 @@ fun getUsername(): String? {
 }
 
 fun getUserInput(): String? {
+    if (true) {
+    } else if (true) {
+    }
     return null
 }
 
