@@ -13,18 +13,10 @@ public class Calculator {
 
     public int minus(int a, int b)
     {
-        if (true) {
-
-        } else if (true) {
-
-        }
         return a - b;
     }
 
     public int devide(int a, int b) {
-        if (false) {
-            System.out.println("AAAAAAA");
-        }
         return a / b;
     }
 
