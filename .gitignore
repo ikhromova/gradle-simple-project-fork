@@ -24,20 +24,8 @@ Thumbs.db
 /.gradle-cache
 *.lock
 
-# Qodana reports
-*.qodana/
-.qodana/
 
 # Log files
 *.log
 
-# IntelliJ-specific Qodana and coverage files
-.qodana/
-
-# Jacoco reports
-.jacoco/
-*.exec
-*.ec
-*.coverage
-.qodana
 
