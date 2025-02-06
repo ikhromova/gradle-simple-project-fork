@@ -4,7 +4,4 @@ profile:
   name: qodana.recommended
 include:
   - name: JvmCoverageInspection
-bootstrap: |
-  ./gradlew test
-  ./gradlew jacocoTestReport
 fixesStrategy: apply
