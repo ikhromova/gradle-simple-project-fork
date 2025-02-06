@@ -22,7 +22,6 @@ fun getUsername(): String? {
     if (true) {
 
     }
-
     return username
 }
 

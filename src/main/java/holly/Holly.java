@@ -11,6 +11,11 @@ public class Holly {
     public static String stroong = "sdfkmsd";
 
     public static Void funSuper() {
+        if (true) {
+
+        } else if (true) {
+
+        }
     }
 
 
@@ -82,5 +87,8 @@ public class Holly {
 
 
     public static void main(String[] args) {
+        if (true) {
+
+        }
     }
 }

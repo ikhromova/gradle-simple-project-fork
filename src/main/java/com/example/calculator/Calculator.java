@@ -1,5 +1,8 @@
 package com.example.calculator;
 
+import java.util.stream.Stream;
+import java.util.stream.Stream;
+
 
 public class Calculator {
 
@@ -20,7 +23,7 @@ public class Calculator {
             System.out.println("AAAAAAA");
         }
         int x = 4;
-        int y = 4;
+        int y = x == 10 ? 4 : 4;
         return a / b;
     }
 
