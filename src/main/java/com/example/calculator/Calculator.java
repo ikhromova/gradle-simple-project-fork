@@ -23,7 +23,7 @@ public class Calculator {
             System.out.println("AAAAAAA");
         }
         int x = 4;
-        int y = x == 10 ? 4 : 4;
+        int y = 4;
         return a / b;
     }
 
