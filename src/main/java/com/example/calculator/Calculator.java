@@ -22,6 +22,8 @@ public class Calculator {
         if (false) {
             System.out.println("AAAAAAA");
         }
+        int x = 4;
+        int y = x == 10 ? 4 : 4;
         return a / b;
     }
 
