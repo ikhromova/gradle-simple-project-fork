@@ -17,7 +17,7 @@ public class Hello {
         }
 
         int x = 4;
-        int y = x == 10 ? 4 : 4;
+        int y = 4;
     }
 
     public static void erwer() {
