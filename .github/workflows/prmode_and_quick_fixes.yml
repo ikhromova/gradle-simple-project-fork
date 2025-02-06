@@ -32,5 +32,6 @@ jobs:
         with:
           pr-mode: true
           push-fixes: 'pull-request'
+          use-caches: 'false'
           args: |
             -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.3-nightly
