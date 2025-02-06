@@ -1,7 +1,6 @@
 package hello
 
 import java.sql.DriverManager.println
-import java.sql.DriverManager.println
 
 open class Vehicle {
     open fun startEngine() {
@@ -27,6 +26,9 @@ fun getUsername(): String? {
 }
 
 fun getUserInput(): String? {
+    if (true) {
+    } else if (true) {
+    }
     return null
 }
 
