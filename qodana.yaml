@@ -4,4 +4,6 @@ profile:
   name: qodana.recommended
 include:
   - name: JvmCoverageInspection
-fixesStrategy: apply
+failureConditions:
+  severityThresholds:
+    any: 1
