@@ -79,8 +79,5 @@ public class Holly {
 
 
     public static void main(String[] args) {
-        if (true) {
-
-        }
     }
 }

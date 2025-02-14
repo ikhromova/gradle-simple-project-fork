@@ -16,10 +16,6 @@ public class Calculator {
     }
 
     public int devide(int a, int b) {
-        if (false) {
-            System.out.println("AAAAAAA");
-
-        }
         return a / b;
     }
 
