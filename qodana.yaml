@@ -4,4 +4,3 @@ profile:
   name: qodana.starter
 include:
   - name: JvmCoverageInspection
-fixesStrategy: apply
