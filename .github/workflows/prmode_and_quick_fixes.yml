@@ -26,7 +26,7 @@ jobs:
           username: ${{ secrets.SPACE_LOGIN }}
           password: ${{ secrets.SPACE_TOKEN }}
       - name: 'Qodana Scan'
-        uses: JetBrains/qodana-action@main
+        uses: JetBrains/qodana-action@v2025.1.1
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
