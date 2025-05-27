@@ -1,0 +1,26 @@
+# IDE-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build directories and artifacts
+/build/
+/out/
+/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Gradle files
+.gradle/
+/build/
+/.gradle/
+/.gradle-cache
+*.lock
+
