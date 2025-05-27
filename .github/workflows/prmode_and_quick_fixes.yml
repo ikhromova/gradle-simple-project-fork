@@ -31,7 +31,7 @@ jobs:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
           pr-mode: true
-          push-fixes: 'pull-request'
+          push-fixes: 'branch'
           commit-message: '🤖 Apply quick-fixes by Funny Qodana to pull-request'
           args: |
             -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2025.1-nightly
