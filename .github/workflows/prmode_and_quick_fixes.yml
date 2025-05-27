@@ -34,4 +34,7 @@ jobs:
           push-fixes: 'pull-request'
           commit-message: '🤖 Apply quick-fixes by Funny Qodana to pull-request'
           args: |
+            --fail-threshold,0,
+            --baseline,baseline_qodana.sarif.json,
+            --baseline-include-absent,
             -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2025.1-nightly
