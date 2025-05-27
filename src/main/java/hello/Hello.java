@@ -12,7 +12,7 @@ public class Hello {
 
         int x = 4;
         int y = 4;
-        final String text = (String) "123";
+        final String text = "123";
         System.out.println(text);
 
         if (true) {
