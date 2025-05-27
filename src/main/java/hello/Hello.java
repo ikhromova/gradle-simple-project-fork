@@ -1,10 +1,4 @@
 package hello;
-import java.util.stream.Stream;
-import java.util.stream.Stream;
-import java.util.stream.Stream;
-import java.util.stream.Stream;
-import java.util.stream.Stream;
-import java.util.stream.Stream;
 
 public class Hello {
 
@@ -15,21 +9,6 @@ public class Hello {
         final String text = "123";
         System.out.println(text);
 
-        if (true) {
-
-
-
-
-
-        } else {
-
-
-
-
-
-        }
-
-        if (false) {}
     }
 
     public static void erwer() {
