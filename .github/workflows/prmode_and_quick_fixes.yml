@@ -26,12 +26,12 @@ jobs:
           username: ${{ secrets.SPACE_LOGIN }}
           password: ${{ secrets.SPACE_TOKEN }}
       - name: 'Qodana Scan'
-        uses: JetBrains/qodana-action@v2024.3.4
+        uses: JetBrains/qodana-action@v2025.1.1
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
           pr-mode: true
-          push-fixes: 'branch'
-          commit-message: '🤖 Apply quick-fixes by Super Puper Qodana to branch'
+          push-fixes: 'pull-request'
+          commit-message: '🤖 Apply quick-fixes by Super Puper Qodana to pull-request'
           args: |
-            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2024.3-nightly,--apply-fixes
+            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2025.1-nightly,--apply-fixes
