@@ -7,6 +7,22 @@ public class Hello {
 
         int x = 4;
         int y = 4;
+
+        if (true) {
+
+
+
+
+
+        } else {
+
+
+
+
+
+        }
+
+        if (false) {}
     }
 
     public static void erwer() {
