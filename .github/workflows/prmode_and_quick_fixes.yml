@@ -33,6 +33,7 @@ jobs:
           pr-mode: true
           push-fixes: 'branch'
           commit-message: '🤖 Apply quick-fixes by Funny Qodana to pull-request'
+          use-nightly: true
           args: |
             --fail-threshold,0,
             --baseline,baseline_qodana.sarif.json,
