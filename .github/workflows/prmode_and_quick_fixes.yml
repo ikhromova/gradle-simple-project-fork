@@ -29,6 +29,8 @@ jobs:
         uses: JetBrains/qodana-action@main
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+          QD_PRODUCT_INTERNAL_FEED: ${{ secrets.QD_PRODUCT_INTERNAL_FEED }}
+          QD_PRODUCT_INTERNAL_AUTH: ${{ secrets.QD_PRODUCT_INTERNAL_AUTH }}
         with:
           pr-mode: true
           push-fixes: 'branch'
