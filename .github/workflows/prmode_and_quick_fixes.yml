@@ -33,6 +33,7 @@ jobs:
           QD_PRODUCT_INTERNAL_AUTH: ${{ secrets.QD_PRODUCT_INTERNAL_AUTH }}
         with:
           pr-mode: true
+          use-caches: false
           commit-message: '🤖 Apply quick-fixes by Funny Qodana to pull-request'
           use-nightly: true
           args: |
