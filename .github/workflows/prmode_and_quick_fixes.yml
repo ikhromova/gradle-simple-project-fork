@@ -26,12 +26,14 @@ jobs:
           username: ${{ secrets.SPACE_LOGIN }}
           password: ${{ secrets.SPACE_TOKEN }}
       - name: 'Qodana Scan'
-        uses: JetBrains/qodana-action@v2025.1.1
+        uses: JetBrains/qodana-action@main
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
           pr-mode: true
-          push-fixes: 'pull-request'
-          commit-message: '🤖 Apply quick-fixes by Super Puper Qodana to pull-request'
+          use-caches: false
+          cache-default-branch-only: true
+          commit-message: '🤖 Apply quick-fixes by Funny Qodana to pull-request'
+          use-nightly: true
           args: |
-            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2025.1-nightly,--cleanup
+           --linter,qodana-jvm,--within-docker,false,--clear-cache 
