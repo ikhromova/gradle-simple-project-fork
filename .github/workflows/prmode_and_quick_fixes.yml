@@ -36,4 +36,4 @@ jobs:
           commit-message: '🤖 Apply quick-fixes by Funny Qodana to pull-request'
           use-nightly: true
           args: |
-            -l,qodana-jvm,--within-docker,true,--clear-cache 
+            -l,qodana-jvm,--ide,QDJVM,--clear-cache 
