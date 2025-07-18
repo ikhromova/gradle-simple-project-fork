@@ -34,6 +34,7 @@ jobs:
         with:
           pr-mode: true
           use-caches: false
+          cache-default-branch-only: true
           commit-message: '🤖 Apply quick-fixes by Funny Qodana to pull-request'
           use-nightly: true
           args: |
