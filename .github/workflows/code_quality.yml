@@ -32,6 +32,6 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
-          upload-result: true
+          upload-result: false
           args: |
             -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2025.2-nightly
