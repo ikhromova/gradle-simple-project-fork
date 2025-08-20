@@ -33,4 +33,5 @@ jobs:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
           args: |
-            -l, qodana-jvm
+            -l, qodana-jvm,
+            --within-docker, false
