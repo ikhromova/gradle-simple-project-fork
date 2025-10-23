@@ -33,6 +33,5 @@ jobs:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
           args: |
-            --property=idea.background.write.action.enabled=false,
             -l, qodana-jvm,
             --within-docker, true
