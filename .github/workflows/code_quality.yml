@@ -28,10 +28,10 @@ jobs:
           username: ${{ secrets.SPACE_LOGIN }}
           password: ${{ secrets.SPACE_TOKEN }}
       - name: 'Qodana Scan'
-        uses: JetBrains/qodana-action@main
+        uses: JetBrains/qodana-action@v2025.3.1
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
           upload-result: false
           args: |
-            -l,${{ secrets.SPACE_REGISTRY }}/p/sa/containers/qodana-jvm:2025.2-nightly
+            --image,jetbrains/qodana-jvm:2025.3
