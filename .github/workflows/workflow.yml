@@ -1,0 +1,40 @@
+name: Qodana Scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - action-runner-act
+  pull_request:
+    branches:
+      - action-runner-act
+
+jobs:
+  qodana:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      checks: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Debug pwd
+        run: |
+          echo "Current dir:"
+          pwd
+          echo "Files in current dir:"
+          ls -la
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.SPACE_REGISTRY }}
+          username: ${{ secrets.SPACE_LOGIN }}
+          password: ${{ secrets.SPACE_TOKEN }}
+      - name: Run Qodana
+        uses: JetBrains/qodana-action@main
+        with:
+          args: "--report-dir,./results/report,--fail-threshold,0,--save-report,--property=${{ secrets.SERVICE_PROP }}=${{ secrets.SERVICE_CONFIGURATION_URL }},--image,registry.jetbrains.team/p/sa/containers/qodana-jvm:2025.2"
+        env:
+          QODANA_ENDPOINT: ${{ secrets.QODANA_ENDPOINT }}
+          QODANA_TOKEN: ${{ secrets.QODANA_STGN_TOKEN }}
