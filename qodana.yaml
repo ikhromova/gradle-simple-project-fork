@@ -4,6 +4,6 @@ profile:
   name: qodana.recommended
 failureConditions:
   testCoverageThresholds:
-    fresh: 10
-    total: 10
+    fresh: 90
+    total: 90
 
