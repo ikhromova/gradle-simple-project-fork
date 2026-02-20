@@ -3,9 +3,8 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="gradleJvm" value="#JAVA_SDK" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="gradleJvm" value="#JAVA_SDK" />
       </GradleProjectSettings>
     </option>
   </component>
