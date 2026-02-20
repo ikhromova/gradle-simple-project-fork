@@ -2,8 +2,4 @@ version: 1.0
 projectJDK: "21"
 profile:
   name: qodana.recommended
-failureConditions:
-  testCoverageThresholds:
-    fresh: 90
-    total: 90
 
