@@ -1,6 +1,5 @@
 version: 1.0
 projectJDK: "21"
-bootstrap: echo "org.gradle.java.home=$(dirname $(dirname $(readlink -f $(which java))))" >> gradle.properties
 profile:
   name: qodana.recommended
 failureConditions:
