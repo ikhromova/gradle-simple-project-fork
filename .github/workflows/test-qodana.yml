@@ -1,5 +1,8 @@
 name: Test - Qodana + Coverage (public 2025.3, pr-mode)
 on:
+  push:
+    branches:
+      - 'test/**'
   pull_request:
   workflow_dispatch:
 
