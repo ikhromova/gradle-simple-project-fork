@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jacocoCodeCoverage
-          path: build/reports/jacoco/test
+          path: .qodana/code-coverage
 
       - name: Qodana Scan
         uses: JetBrains/qodana-action@main
