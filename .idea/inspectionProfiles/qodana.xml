@@ -1,0 +1,8 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="qodana.custom" />
+    <inspection_tool class="JavaDoc" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="UnnecessaryReturnStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnusedDeclaration" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>
