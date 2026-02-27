@@ -41,4 +41,4 @@ jobs:
           pr-mode: true
           args: |
             -l,jetbrains/qodana-jvm:2025.3,
-            --profile-path,.idea/inspectionProfiles/qodana.xml
+            -p,.idea/inspectionProfiles/qodana.xml
