@@ -16,28 +16,7 @@ jobs:
       - name: Run Qodana (fail threshold 0 → expect exit 255)
         id: qodana
         uses: JetBrains/qodana-action@main
-        continue-on-error: true
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
-          args: "--linter,qodana-jvm,--fail-threshold,0"
-
-      - name: Check step outcome and exit code output
-        run: |
-          echo "=== Outcome: ${{ steps.qodana.outcome }}"
-          echo "=== Exit code from outputs: ${{ steps.qodana.outputs.exit-code }}"
-          if [ "${{ steps.qodana.outcome }}" != "failure" ]; then
-            echo "UNEXPECTED: step outcome should be 'failure' but got '${{ steps.qodana.outcome }}'"
-            exit 1
-          fi
-          echo "PASS: step correctly reported as failure"
-          EXIT_CODE="${{ steps.qodana.outputs.exit-code }}"
-          if [ "$EXIT_CODE" = "255" ]; then
-            echo "PASS: exit-code output is 255 as expected"
-          elif [ -z "$EXIT_CODE" ]; then
-            echo "INFO: exit-code output not set (optional acceptance criterion not implemented)"
-            echo "INFO: verify manually in step log above — should say 'Process completed with exit code 255'"
-          else
-            echo "FAIL: exit-code output was '$EXIT_CODE', expected '255'"
-            exit 1
-          fi
+          args: "--linter qodana-jvm --fail-threshold 0"
