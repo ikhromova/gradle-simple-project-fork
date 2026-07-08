@@ -1,9 +1,9 @@
 package holly;
 
-import java.util.stream.Stream;
 
+import java.util.List;
 
-public class Holly {
+public class HollyM {
 
     public static int sum(int a, int b) {
         return a + b;
@@ -23,4 +23,5 @@ public class Holly {
     public static int minusxx(int a, int b) {
         return a - b;
     }
+
 }
