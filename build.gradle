@@ -1,25 +1,25 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'org.jetbrains.kotlin.jvm' version '2.0.20'
+}
 
 group = 'com.github.gradle.simple'
-
-sourceCompatibility = 1.8 // java 8
-targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation 'com.google.guava:guava:29.0-jre'
-}
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
+tasks.register('sourcesJar', Jar) {
+    dependsOn classes
+//    getArchiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+tasks.register('javadocJar', Jar) {
+    dependsOn javadoc
+//    getArchiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
@@ -29,6 +29,41 @@ artifacts {
 }
 
 wrapper {
-    gradleVersion = "7.2"
+    gradleVersion = "8.5"
     distributionType = Wrapper.DistributionType.ALL
+}
+
+dependencies {
+    testImplementation(platform('org.junit:junit-bom:5.10.1'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    implementation 'com.google.guava:guava:32.0.0-android'
+    implementation 'org.clojure:clojure:1.11.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required.set(true)
+        csv.required.set(true)
+        html.required.set(true)
+
+        xml.outputLocation = file(".qodana/code-coverage/coverage.xml")
+    }
+}
+
+
+test {
+    finalizedBy jacocoTestReport
+}
+
+kotlin {
+    jvmToolchain(17)
 }
