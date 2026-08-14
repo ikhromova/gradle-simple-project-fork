@@ -26,19 +26,23 @@ parameters:
 trigger: none
 pr: none
 
-pool:
-  vmImage: ${{ parameters.vmImage }}
+# An explicit job is required: template expressions are not allowed in a root-level `pool`,
+# only in a job-level one ("A template expression is not allowed in this context").
+jobs:
+  - job: qodana_scan
+    displayName: Qodana Scan (E2E fixture)
+    pool:
+      vmImage: ${{ parameters.vmImage }}
+    steps:
+      # Reference checkout config for PR-mode scenarios (QD-15410): full history + credentials
+      # for the task's git operations.
+      - checkout: self
+        fetchDepth: 0
+        persistCredentials: true
 
-steps:
-  # Reference checkout config for PR-mode scenarios (QD-15410): full history + credentials
-  # for the task's git operations.
-  - checkout: self
-    fetchDepth: 0
-    persistCredentials: true
-
-  - task: QodanaScan@2026
-    env:
-      QODANA_TOKEN: $(QODANA_TOKEN)
-    inputs:
-      ${{ each input in parameters.taskInputs }}:
-        ${{ input.key }}: ${{ input.value }}
+      - task: QodanaScan@2026
+        env:
+          QODANA_TOKEN: $(QODANA_TOKEN)
+        inputs:
+          ${{ each input in parameters.taskInputs }}:
+            ${{ input.key }}: ${{ input.value }}
