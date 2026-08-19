@@ -13,7 +13,7 @@ jobs:
       - task: QodanaScan@2026
         displayName: "Qodana Scan (stable)"
         env:
-          QODANA_TOKEN: REMOVED_TOKEN
+          QODANA_TOKEN: $(QODANA_TOKEN)
         inputs:
           args: "--print-problems --log-level debug"
 
@@ -26,7 +26,7 @@ jobs:
       - task: QodanaScan@2026
         displayName: "Qodana Scan (nightly latest)"
         env:
-          QODANA_TOKEN: REMOVED_TOKEN
+          QODANA_TOKEN: $(QODANA_TOKEN)
         inputs:
           nightlyVersion: "latest"
           args: "--print-problems --log-level debug"
@@ -40,7 +40,7 @@ jobs:
       - task: QodanaScan@2026
         displayName: "Qodana Scan (nightly 2026.1)"
         env:
-          QODANA_TOKEN: REMOVED_TOKEN
+          QODANA_TOKEN: $(QODANA_TOKEN)
         inputs:
           nightlyVersion: "2026.1"
           args: "--print-problems --log-level debug"
@@ -54,7 +54,7 @@ jobs:
       - task: QodanaScan@2026
         displayName: "Qodana Scan (old useNightly param)"
         env:
-          QODANA_TOKEN: REMOVED_TOKEN
+          QODANA_TOKEN: $(QODANA_TOKEN)
         inputs:
           useNightly: true
           args: "--print-problems --log-level debug"
@@ -69,7 +69,7 @@ jobs:
       - task: QodanaScan@2026
         displayName: "Qodana Scan (bad nightly version)"
         env:
-          QODANA_TOKEN: REMOVED_TOKEN
+          QODANA_TOKEN: $(QODANA_TOKEN)
         inputs:
           nightlyVersion: "9999.9"
           args: "--print-problems"
