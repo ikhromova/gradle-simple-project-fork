@@ -1,0 +1,49 @@
+# Parameterized fixture pipeline for the QodanaScan extension E2E tests (QD-15726).
+#
+# Commit this file to the fixture repository and create a pipeline from it (its id goes to
+# -PazurePipelineId). The test suite triggers runs via `POST _apis/pipelines/{id}/runs` with
+# `templateParameters`, sending QodanaScan inputs as one `taskInputs` object. NOTE: the Runs API
+# rejects nested objects in templateParameters - the object must be passed as a JSON string:
+#
+#   {"templateParameters": {"vmImage": "windows-latest",
+#                           "taskInputs": "{\"args\": \"--log-level debug\", \"uploadSarif\": \"false\"}"}}
+#
+# A key absent from `taskInputs` is not passed to the task at all, so the task's own input
+# defaults stay exercisable. New task inputs need no changes here — only a new constant in
+# QodanaScanInput on the test side (which also keeps input names typo-proof: the task silently
+# ignores unknown inputs, see the useNightly gotcha in QD-10691).
+#
+# The pipeline expects a secret variable QODANA_TOKEN configured on the pipeline (or a linked
+# variable group).
+
+parameters:
+  - name: vmImage
+    type: string
+    default: ubuntu-latest
+  - name: taskInputs
+    type: object
+    default: {}
+
+trigger: none
+pr: none
+
+# An explicit job is required: template expressions are not allowed in a root-level `pool`,
+# only in a job-level one ("A template expression is not allowed in this context").
+jobs:
+  - job: qodana_scan
+    displayName: Qodana Scan (E2E fixture)
+    pool:
+      vmImage: ${{ parameters.vmImage }}
+    steps:
+      # Reference checkout config for PR-mode scenarios (QD-15410): full history + credentials
+      # for the task's git operations.
+      - checkout: self
+        fetchDepth: 0
+        persistCredentials: true
+
+      - task: QodanaScan@2026
+        env:
+          QODANA_TOKEN: $(QODANA_TOKEN)
+        inputs:
+          ${{ each input in parameters.taskInputs }}:
+            ${{ input.key }}: ${{ input.value }}

@@ -1,0 +1,75 @@
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+jobs:
+  # TC-1: no nightlyVersion (stable baseline)
+  - job: TC1_stable
+    displayName: "TC-1: stable (no nightlyVersion)"
+    steps:
+      - checkout: self
+        fetchDepth: 0
+      - task: QodanaScan@2026
+        displayName: "Qodana Scan (stable)"
+        env:
+          QODANA_TOKEN: $(QODANA_TOKEN)
+        inputs:
+          args: "--print-problems --log-level debug"
+
+  # TC-2: nightlyVersion=latest
+  - job: TC2_nightly_latest
+    displayName: "TC-2: nightlyVersion=latest"
+    steps:
+      - checkout: self
+        fetchDepth: 0
+      - task: QodanaScan@2026
+        displayName: "Qodana Scan (nightly latest)"
+        env:
+          QODANA_TOKEN: $(QODANA_TOKEN)
+        inputs:
+          nightlyVersion: "latest"
+          args: "--print-problems --log-level debug"
+
+  # TC-4: nightlyVersion=2026.1 (specific version)
+  - job: TC4_nightly_2026_1
+    displayName: "TC-4: nightlyVersion=2026.1"
+    steps:
+      - checkout: self
+        fetchDepth: 0
+      - task: QodanaScan@2026
+        displayName: "Qodana Scan (nightly 2026.1)"
+        env:
+          QODANA_TOKEN: $(QODANA_TOKEN)
+        inputs:
+          nightlyVersion: "2026.1"
+          args: "--print-problems --log-level debug"
+
+  # TC-6: useNightly=true (old removed param, should be ignored)
+  - job: TC6_old_useNightly
+    displayName: "TC-6: useNightly=true (old removed param)"
+    steps:
+      - checkout: self
+        fetchDepth: 0
+      - task: QodanaScan@2026
+        displayName: "Qodana Scan (old useNightly param)"
+        env:
+          QODANA_TOKEN: $(QODANA_TOKEN)
+        inputs:
+          useNightly: true
+          args: "--print-problems --log-level debug"
+
+  # TC-7: nightlyVersion=9999.9 (non-existent, must fail)
+  - job: TC7_nightly_nonexistent
+    displayName: "TC-7: nightlyVersion=9999.9 (must fail)"
+    continueOnError: true
+    steps:
+      - checkout: self
+        fetchDepth: 0
+      - task: QodanaScan@2026
+        displayName: "Qodana Scan (bad nightly version)"
+        env:
+          QODANA_TOKEN: $(QODANA_TOKEN)
+        inputs:
+          nightlyVersion: "9999.9"
+          args: "--print-problems"
