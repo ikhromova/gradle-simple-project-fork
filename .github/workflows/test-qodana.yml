@@ -1,0 +1,44 @@
+name: Test - Qodana + Coverage (public 2025.3, pr-mode)
+on:
+  push:
+    branches:
+      - 'test/**'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Run tests
+        run: |
+          ./gradlew test
+          ./gradlew jacocoTestReport
+
+      - name: Archive coverage data
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacocoCodeCoverage
+          path: .qodana/code-coverage
+
+      - name: Qodana Scan
+        uses: JetBrains/qodana-action@main
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+        with:
+          upload-result: true
+          pr-mode: true
+          args: |
+            -l,jetbrains/qodana-jvm:2025.3,
+            -p,.idea/inspectionProfiles/qodana.xml
